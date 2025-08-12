@@ -1,11 +1,500 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reparo BV - Home</title>
+    <title>Reparo BV - Jouw expert in smartphones, tablets & reparaties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .nav-link.active {
+            color: #3b82f6; /* blue-500 */
+            font-weight: 600;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body>
-    <p>Tekst</p>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigatie -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600" onclick="showSection('home')">Reparo</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300" onclick="showSection('home')">Home</a>
+                <a href="#reparaties" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300" onclick="showSection('reparaties')">Reparaties</a>
+                <a href="#producten" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300" onclick="showSection('producten')">Producten</a>
+                <a href="#over-ons" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300" onclick="showSection('over-ons')">Over Ons</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300" onclick="showSection('contact')">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobiel Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#home" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100" onclick="showSection('home')">Home</a>
+            <a href="#reparaties" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100" onclick="showSection('reparaties')">Reparaties</a>
+            <a href="#producten" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100" onclick="showSection('producten')">Producten</a>
+            <a href="#over-ons" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100" onclick="showSection('over-ons')">Over Ons</a>
+            <a href="#contact" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100" onclick="showSection('contact')">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Sectie -->
+        <section id="home" class="section active">
+            <div class="bg-white">
+                <div class="container mx-auto px-6 py-20 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Snel, vakkundig en betrouwbaar</h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Jouw specialist voor de verkoop en reparatie van smartphones en tablets. Wij staan voor je klaar met snelle service en deskundig advies.</p>
+                    <div class="space-x-4">
+                        <a href="#producten" onclick="showSection('producten')" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Bekijk Producten</a>
+                        <a href="#reparaties" onclick="showSection('reparaties')" class="bg-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-lg hover:bg-gray-300 transition duration-300">Meld Reparatie Aan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="container mx-auto px-6 py-16">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="smartphone" class="text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Verkoop</h3>
+                        <p class="text-gray-600">Ontdek ons ruime aanbod van de nieuwste smartphones en tablets, en scherp geprijsde refurbished toestellen.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="wrench" class="text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Reparaties</h3>
+                        <p class="text-gray-600">Defect toestel? Voor 10:00 gebracht, is eind van de middag klaar. Snelle service met 6 maanden garantie.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="shopping-bag" class="text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Accessoires</h3>
+                        <p class="text-gray-600">Van beschermende hoesjes tot screenprotectors, vind de perfecte accessoire voor jouw apparaat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="bg-white py-16">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-8">Wat onze klanten zeggen</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star-half" class="fill-current"></i></span>
+                                <span class="ml-2 font-bold">4.5 van 5</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">"Super snelle service & producten altijd snel geleverd. De werknemers geven deskundig advies en zijn erg vriendelijk!"</p>
+                            <p class="font-bold">- Beeldbakkers</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                             <div class="flex items-center mb-2">
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="ml-2 font-bold">5 van 5</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">"Mijn scherm was gebroken. Direct geholpen en binnen een half uur was er een nieuw scherm gemonteerd. Top service!"</p>
+                            <p class="font-bold">- Niek Wopereis</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                             <div class="flex items-center mb-2">
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="ml-2 font-bold">5 van 5</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">"Nette prima service! Telefoon klaar terwijl je wacht en goeie koffie. Echt jongens met verstand van reparatie!"</p>
+                            <p class="font-bold">- Robert Gerrits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reparaties Sectie -->
+        <section id="reparaties" class="section py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8">Meld je reparatie aan</h2>
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Waarom kiezen voor Reparo?</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i data-lucide="clock" class="text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <span><span class="font-semibold">Razendsnelle service:</span> Voor 10:00 uur gebracht, dezelfde dag nog klaar.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="shield-check" class="text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <span><span class="font-semibold">6 maanden garantie:</span> Wij staan achter ons werk en gebruiken uitsluitend originele onderdelen.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="users" class="text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <span><span class="font-semibold">Vakkundige monteurs:</span> Ons team heeft de kennis en ervaring om elk probleem op te lossen.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="tablet-smartphone" class="text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
+                                    <span><span class="font-semibold">Gratis leentoestel:</span> Is een onderdeel niet op voorraad? Dan blijf je bereikbaar met een leentoestel.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <form id="reparatieForm">
+                                <div class="mb-4">
+                                    <label for="name" class="block text-gray-700 font-semibold mb-2">Naam</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-gray-700 font-semibold mb-2">E-mailadres</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="device" class="block text-gray-700 font-semibold mb-2">Toestel & Model</label>
+                                    <input type="text" id="device" name="device" placeholder="Bijv. Apple iPhone 14 Pro" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="issue" class="block text-gray-700 font-semibold mb-2">Omschrijving van het probleem</label>
+                                    <textarea id="issue" name="issue" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Verstuur aanvraag</button>
+                            </form>
+                            <div id="form-success" class="hidden mt-4 text-center p-4 bg-green-100 text-green-800 rounded-lg">
+                                Bedankt voor je aanvraag! We nemen zo snel mogelijk contact met je op.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Producten Sectie -->
+        <section id="producten" class="section py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-2">Onze Producten</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Ontdek ons zorgvuldig geselecteerde aanbod van nieuwe en refurbished toestellen en de beste accessoires.</p>
+                
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/3b82f6/ffffff?text=iPhone+15" alt="iPhone 15" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple iPhone 15</h3>
+                            <p class="text-gray-600">Nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 899,-</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/10b981/ffffff?text=Samsung+S23" alt="Samsung Galaxy S23" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy S23</h3>
+                            <p class="text-gray-600">Nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 749,-</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/f59e0b/ffffff?text=Refurbished" alt="Refurbished iPhone 12" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Refurbished iPhone 12</h3>
+                            <p class="text-gray-600">Zo goed als nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 429,-</p>
+                        </div>
+                    </div>
+                     <!-- Product Card 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/6366f1/ffffff?text=Accessoires" alt="Telefoonhoesje" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Lederen Telefoonhoes</h3>
+                            <p class="text-gray-600">Accessoire</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 29,95</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Over Ons Sectie -->
+        <section id="over-ons" class="section py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold">Maak kennis met ons team</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Reparo is een jong en dynamisch bedrijf, opgericht in 2012. Ons team bestaat uit enthousiaste en vakkundige medewerkers die dagelijks voor je klaarstaan.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+                    <!-- Team Member -->
+                    <div class="space-y-4">
+                        <img class="mx-auto h-32 w-32 rounded-full object-cover" src="https://placehold.co/200x200/e0e7ff/3730a3?text=Brian" alt="Brian">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-semibold">Brian</h3>
+                            <p class="text-blue-600">Eigenaar & Oprichter</p>
+                        </div>
+                    </div>
+                    <!-- Team Member -->
+                    <div class="space-y-4">
+                        <img class="mx-auto h-32 w-32 rounded-full object-cover" src="https://placehold.co/200x200/e0e7ff/3730a3?text=Erica" alt="Erica">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-semibold">Erica</h3>
+                            <p class="text-blue-600">Reparatie Specialist</p>
+                        </div>
+                    </div>
+                    <!-- Team Member -->
+                    <div class="space-y-4">
+                        <img class="mx-auto h-32 w-32 rounded-full object-cover" src="https://placehold.co/200x200/e0e7ff/3730a3?text=Jord" alt="Jord">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-semibold">Jord</h3>
+                            <p class="text-blue-600">Verkoopadviseur</p>
+                        </div>
+                    </div>
+                    <!-- Team Member -->
+                    <div class="space-y-4">
+                        <img class="mx-auto h-32 w-32 rounded-full object-cover" src="https://placehold.co/200x200/e0e7ff/3730a3?text=Milco" alt="Milco">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-semibold">Milco</h3>
+                            <p class="text-blue-600">Technicus</p>
+                        </div>
+                    </div>
+                    <!-- Team Member -->
+                    <div class="space-y-4">
+                        <img class="mx-auto h-32 w-32 rounded-full object-cover" src="https://placehold.co/200x200/e0e7ff/3730a3?text=Xander" alt="Xander">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-semibold">Xander</h3>
+                            <p class="text-blue-600">Klantenservice</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Sectie -->
+        <section id="contact" class="section py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8">Neem contact op</h2>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="grid md:grid-cols-2">
+                        <!-- Contact Info -->
+                        <div class="p-8 bg-blue-600 text-white">
+                            <h3 class="text-2xl font-bold mb-6">Contactinformatie</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <i data-lucide="map-pin" class="w-6 h-6 mr-4 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold">Bezoek ons</h4>
+                                        <p>Kalanderstraat 10D</p>
+                                        <p>7461 JM Rijssen</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-lucide="phone" class="w-6 h-6 mr-4 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold">Bel ons</h4>
+                                        <p id="tel">0548 20 10 12</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-lucide="mail" class="w-6 h-6 mr-4 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold">Mail ons</h4>
+                                        <p id="mailto">info@reparo.nl</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-lucide="clock" class="w-6 h-6 mr-4 mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold">Openingstijden</h4>
+                                        <p>Zo: Gesloten</p>
+                                        <p>Ma - Vr: 08:30 - 17:30</p>
+                                        <p>Za: 09:00 - 15:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Kaart -->
+                        <div class="h-64 md:h-auto">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.821389814465!2d6.520299677224204!3d52.30539197199999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b817c7e0007809%3A0x1d38ed8367a99873!2sKalanderstraat%2010d%2C%207461%20JM%20Rijssen%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1723460677114!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Reparo B.V.</h3>
+                    <p class="text-gray-400">Kalanderstraat 10D<br>7461 JM Rijssen</p>
+                    <p class="text-gray-400 mt-2">KvK: 78433428</p>
+                    <p class="text-gray-400">BTW: NL 861393533 B01</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Snelle Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#reparaties" onclick="showSection('reparaties')" class="text-gray-400 hover:text-white">Reparatie Aanmelden</a></li>
+                        <li><a href="#producten" onclick="showSection('producten')" class="text-gray-400 hover:text-white">Nieuwe Toestellen</a></li>
+                        <li><a href="#producten" onclick="showSection('producten')" class="text-gray-400 hover:text-white">Refurbished</a></li>
+                        <li><a href="#over-ons" onclick="showSection('over-ons')" class="text-gray-400 hover:text-white">Over Ons</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Volg Ons</h3>
+                    <p class="text-gray-400 mb-4">Blijf op de hoogte van het laatste nieuws en aanbiedingen.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; <span id="year"></span> Reparo B.V. - Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Single-page navigation
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+
+        function showSection(id) {
+            // Hide all sections
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the target section
+            const targetSection = document.getElementById(id);
+            if(targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Update active nav link
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu on click
+            mobileMenu.classList.add('hidden');
+            
+            // Scroll to top of the page to show the section
+            window.scrollTo(0, 0);
+        }
+
+        // Set initial active state based on hash or default to home
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+        });
+        
+        // Handle nav link clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const id = e.target.getAttribute('href').substring(1);
+                showSection(id);
+                window.history.pushState(null, null, `#${id}`);
+            });
+        });
+        
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const id = e.target.getAttribute('href').substring(1);
+                showSection(id);
+                window.history.pushState(null, null, `#${id}`);
+            });
+        });
+
+
+        // Reparatie form submission
+        const reparatieForm = document.getElementById('reparatieForm');
+        const formSuccessMessage = document.getElementById('form-success');
+        reparatieForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real application, you would send this data to a server.
+            // For this demo, we'll just show a success message.
+            reparatieForm.style.display = 'none';
+            formSuccessMessage.style.display = 'block';
+        });
+
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Hyperlinks
+        const mailto = document.getElementById('mailto')
+        const tel = document.getElementById('tel')
+        mailto.addEventListener('onclick', () => {open('mailto:info%40reparo%2Enl?subject=Ik%20heb%20een%20vraag%20over%20Reparo')})
+    </script>
 </body>
 </html>
