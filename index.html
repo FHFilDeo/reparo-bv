@@ -56,6 +56,7 @@
         /* Normal styling */
         body {
             font-family: 'Inter', sans-serif;
+            transition-duration: 3.4s;
         }
         #whatsapp-container {
             text-align: right;
@@ -90,6 +91,11 @@
         .logo-no-height-constrain {
             object-position: center !important;
         }
+        /* text outline correction */
+        div.group div div span {
+            text-shadow: 1px 1px black;
+        }
+        /* Menu */
         #mobile-menu-button .icon-wrapper {
             position: relative;
             width: 1.2em;
@@ -330,67 +336,622 @@
                 </div> 
                 <tabsection id="nieuw" class="py-16">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-                    <!-- Product Card 1 -->
+                    <!-- Apple iPhone Nieuw -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <div class="relative">
-                            <img src="https://placehold.co/600x600/3b82f6/ffffff?text=iPhone" alt="iPhone" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span id="iphone-new" class="text-white font-bold text-lg">Bekijk details</span>
+                            <img src="https://placehold.co/600x600/b166cc/ffffff?text=iPhone" alt="iPhone" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="iphone-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
                             </div>
                         </div>
                         <div class="p-4">
                             <h3 class="text-lg font-semibold">Apple iPhones</h3>
-                            <p class="text-reparo-gray">Nieuw</p>
+                            <p class="text-reparo-gray">Nieuw - Smartphones</p>
                         </div>
                     </div>
-                    <!-- Product Card 2 -->
+                    <!-- Apple iPad Nieuw -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <div class="relative">
-                            <img src="https://placehold.co/600x600/10b981/ffffff?text=Galaxy S" alt="Samsung Galaxy S" class="w-full h-64 object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span id="galaxy-s-new" class="text-white font-bold text-lg">Bekijk details</span>
+                            <img src="https://placehold.co/600x600/fa57c1/ffffff?text=iPad" alt="iPad" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="ipad-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple iPads</h3>
+                            <p class="text-reparo-gray">Nieuw - Tablets</p>
+                        </div>
+                    </div>
+                    <!-- Apple Macintosh Nieuw -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/7572ff/ffffff?text=Macintosh" alt="Macintosh" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="macintosh-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple Macs</h3>
+                            <p class="text-reparo-gray">Nieuw - iMacs, Macbooks</p>
+                        </div>
+                    </div>
+                    <!-- Apple Watch Nieuw -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/69a6f9/ffffff?text=Watch" alt="Watch" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="watch-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple Watch</h3>
+                            <p class="text-reparo-gray">Nieuw - Horloges</p>
+                        </div>
+                    </div>
+                    <!-- Apple Nieuw -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/666666/ffffff?text=Apple" alt="Apple" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="apple-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple Overig</h3>
+                            <p class="text-reparo-gray">Nieuw - AirPods, AirTag, Vision, etc</p>
+                        </div>
+                    </div>
+                    <!-- Galaxy Z Nieuw -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/0c4da2/ffffff?text=Galaxy+Z" alt="Samsung Galaxy Z" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-z-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Z</h3>
+                            <p class="text-reparo-gray">Nieuw - Vouw-Smartphones</p>
+                        </div>
+                    </div>
+                    <!-- Galaxy S Nieuw -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/cedbec/ffffff?text=Galaxy S" alt="Samsung Galaxy S" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-s-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
                             </div>
                         </div>
                         <div class="p-4">
                             <h3 class="text-lg font-semibold">Samsung Galaxy S</h3>
-                            <p class="text-reparo-gray">Nieuw</p>
+                            <p class="text-reparo-gray">Nieuw - Smartphones</p>
                         </div>
                     </div>
-                    <!-- Product Card 3 -->
+                    <!-- Galaxy A Nieuw -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <div class="relative">
-                            <img src="https://placehold.co/600x600/f59e0b/ffffff?text=Galaxy+A" alt="Samsung Galaxy A" class="w-full h-64 object-cover">
-                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span id="galaxy-a-new" class="text-white font-bold text-lg">Bekijk details</span>
+                            <img src="https://placehold.co/600x600/6d94c7/ffffff?text=Galaxy+A" alt="Samsung Galaxy A" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-a-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
                             </div>
                         </div>
                         <div class="p-4">
                             <h3 class="text-lg font-semibold">Samsung Galaxy A</h3>
-                            <p class="text-reparo-gray">Nieuw</p>
+                            <p class="text-reparo-gray">Nieuw - Smartphones</p>
                         </div>
                     </div>
-                     <!-- Product Card 4 -->
+                    <!-- Galaxy Tab S Nieuw -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <div class="relative">
-                            <img src="https://placehold.co/600x600/6366f1/ffffff?text=Anders" alt="Anders" class="w-full h-64 object-cover">
-                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span id="other-new" class="text-white font-bold text-lg">Bekijk details</span>
+                            <img src="https://placehold.co/600x600/808080/ffffff?text=Galaxy+Tab+S" alt="Samsung Galaxy Tab S" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-tab-s-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Tab S</h3>
+                            <p class="text-reparo-gray">Nieuw - Tablets</p>
+                        </div>
+                    </div>
+                    <!-- Galaxy Tab A Nieuw -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/8b8b8b/ffffff?text=Galaxy+Tab+A" alt="Samsung Galaxy Tab A" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-tab-a-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Tab A</h3>
+                            <p class="text-reparo-gray">Nieuw - Tablets</p>
+                        </div>
+                    </div>
+                    <!-- Galaxy Watch Nieuw -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/9eb8da/ffffff?text=Galaxy+Watch" alt="Samsung Galaxy Watch" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-watch-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Watch</h3>
+                            <p class="text-reparo-gray">Nieuw - Horloges</p>
+                        </div>
+                    </div>
+                    <!-- Galaxy Nieuw -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/3d71b5/ffffff?text=Galaxy" alt="Samsung Galaxy" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Overig</h3>
+                            <p class="text-reparo-gray">Nieuw - Buds, Ring, SmartTag, XCover7</p>
+                        </div>
+                    </div>
+                    </div>
+                     <!-- Anders Nieuw -->
+                    <div class="bg-white mx-auto md:mx-[120px] mt-8 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/1200x1200/c800a1/ffffff?text=Overig" alt="Overig" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="other-new" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
                             </div>
                         </div>
                         <div class="p-4">
                             <h3 class="text-lg font-semibold">Overig</h3>
                             <p class="text-reparo-gray">Nieuw</p>
                         </div>
-                    </div>
                 </div>
                 </tabsection>
                  <tabsection id="refurbished" class="py-16">
-
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                    <!-- Apple iPhone Refurbished -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/b166cc/ffffff?text=iPhone" alt="iPhone" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="iphone-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple iPhones</h3>
+                            <p class="text-reparo-gray">Refurbished - Smartphones</p>
+                        </div>
+                    </div>
+                    <!-- Apple iPad Refurbished -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/fa57c1/ffffff?text=iPad" alt="iPad" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="ipad-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple iPads</h3>
+                            <p class="text-reparo-gray">Refurbished - Tablets</p>
+                        </div>
+                    </div>
+                    <!-- Apple Macintosh Refurbished -->
+                     <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/7572ff/ffffff?text=Macintosh" alt="Macintosh" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="macintosh-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple Macs</h3>
+                            <p class="text-reparo-gray">Refurbished - iMacs, Macbooks</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Apple Watch Refurbished -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/69a6f9/ffffff?text=Watch" alt="Watch" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="watch-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple Watch</h3>
+                            <p class="text-reparo-gray">Refurbished - Horloges</p>
+                        </div>
+                    </div>
+                    <!-- Apple Nieuw -->
+                     <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/666666/ffffff?text=Apple" alt="Apple" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="apple-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple Overig</h3>
+                            <p class="text-reparo-gray">Refurbished - AirPods, AirTag, Vision, etc</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Galaxy Z Refurbished -->
+                     <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/0c4da2/ffffff?text=Galaxy+Z" alt="Samsung Galaxy Z" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-z-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Z</h3>
+                            <p class="text-reparo-gray">Refurbished - Vouw-Smartphones</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Galaxy S Refurbished -->
+                    <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/cedbec/ffffff?text=Galaxy S" alt="Samsung Galaxy S" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-s-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy S</h3>
+                            <p class="text-reparo-gray">Refurbished - Smartphones</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Galaxy A Refurbished -->
+                     <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/6d94c7/ffffff?text=Galaxy+A" alt="Samsung Galaxy A" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-a-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy A</h3>
+                            <p class="text-reparo-gray">Refurbished - Smartphones</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Galaxy Tab S Refurbished -->
+                     <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/808080/ffffff?text=Galaxy+Tab+S" alt="Samsung Galaxy Tab S" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-tab-s-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Tab S</h3>
+                            <p class="text-reparo-gray">Refurbished - Tablets</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Galaxy Tab A Refurbished -->
+                     <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/8b8b8b/ffffff?text=Galaxy+Tab+A" alt="Samsung Galaxy Tab A" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-tab-a-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Tab A</h3>
+                            <p class="text-reparo-gray">Refurbished - Tablets</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Galaxy Watch Nieuw -->
+                     <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/9eb8da/ffffff?text=Galaxy+Watch" alt="Samsung Galaxy Watch" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-watch-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Watch</h3>
+                            <p class="text-reparo-gray">Refurbished - Horloges</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Galaxy Nieuw -->
+                     <!--
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/3d71b5/ffffff?text=Galaxy" alt="Samsung Galaxy" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="galaxy-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy Overig</h3>
+                            <p class="text-reparo-gray">Refurbished - Buds, Ring, SmartTag</p>
+                        </div>
+                    </div>
+                    </div>
+                    -->
+                     <!-- Anders Refurbished -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/1200x1200/c800a1/ffffff?text=Overig" alt="Overig" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="other-refurbished" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Overig</h3>
+                            <p class="text-reparo-gray">Refurbished</p>
+                        </div>
+                    </div>
                  </tabsection>
-                 <tabsection id="accessoires" class="py-16">
-                    
-                 </tabsection>
-
+                </div>
+            </tabsection>
+            <tabsection id="accessoires" class="py-16">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                     <!-- iPhone -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/b166cc/ffffff?text=iPhone" alt="iPhone" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="hoesje-iphone" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">iPhone Hoesjes</h3>
+                            <p class="text-reparo-gray">iPhone</p>
+                        </div>
+                    </div>
+                    <!-- Rosso -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/b93332/ffffff?text=Rosso" alt="Rosso" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="hoesje-rosso" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Rosso Hoesjes</h3>
+                            <p class="text-reparo-gray">iPhone en Samsung</p>
+                        </div>
+                    </div>
+                    <!-- Presidio -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/007e9e/ffffff?text=Presidio" alt="Presidio" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="hoesje-presidio" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Speck Presidio Hoesjes</h3>
+                            <p class="text-reparo-gray">iPhone, iPad en Samsung</p>
+                        </div>
+                    </div>
+                    <!-- Promiz -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/000000/ffffff?text=Promiz" alt="Promiz" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="hoesje-promiz" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Promiz Hoesjes</h3>
+                            <p class="text-reparo-gray">iPhone en Samsung</p>
+                        </div>
+                    </div>
+                     <!-- Mio -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/003057/ffffff?text=Mio" alt="Mio" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="hoesje-mio" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Mio Hoesjes</h3>
+                            <p class="text-reparo-gray">iPhone</p>
+                        </div>
+                    </div>
+                     <!-- Mobilize -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/00538b/ffffff?text=>+Mobilize" alt="> Mobilize" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="hoesje-mobilize" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">> Mobilize Hoesjes</h3>
+                            <p class="text-reparo-gray">iPhone en Samsung</p>
+                        </div>
+                    </div>
+                     <!-- My Style -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/e7bea0/ffffff?text=My+Style" alt="My Style" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="hoesje-my-style" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">My Style Hoesjes</h3>
+                            <p class="text-reparo-gray">iPhone en Samsung</p>
+                        </div>
+                    </div>
+                     <!-- Decoded -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/90533b/ffffff?text=Decoded" alt="Decoded" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="hoesje-decoded" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Decoded Hoesjes</h3>
+                            <p class="text-reparo-gray">iPhone</p>
+                        </div>
+                    </div>
+                     <!-- iPhone -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/b166cc/ffffff?text=iPhone" alt="iPhone" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="wallet-iphone" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">iPhone Card Holders</h3>
+                            <p class="text-reparo-gray">iPhone</p>
+                        </div>
+                    </div>
+                     <!-- Mio -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/003057/ffffff?text=Mio" alt="Mio" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="wallet-mio" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Mio Card Holders</h3>
+                            <p class="text-reparo-gray">iPhone</p>
+                        </div>
+                    </div>
+                     <!-- Panzerglass -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/ed6c1c/ffffff?text=Panzerglass" alt="Panzerglass" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="protector-panzerglass" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Panzerglass Screenprotectors</h3>
+                            <p class="text-reparo-gray">iPhone, Apple Watch en Samsung</p>
+                        </div>
+                    </div>
+                     <!-- Striker x D30 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/33c42e/ffffff?text=Striker+x+D30" alt="Striker x D30" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="protector-striker-d30" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Striker x D30 Screenprotectors</h3>
+                            <p class="text-reparo-gray">iPhone en Samsung</p>
+                        </div>
+                    </div>
+                     <!-- Cygnett -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/ff5a00/ffffff?text=Cygnett" alt="Cygnett" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="lader-cygnett" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Cygnett Laadkabels</h3>
+                            <p class="text-reparo-gray">USB-C, USB-A, Lightning</p>
+                        </div>
+                    </div>
+                     <!-- Strikeline® Premium -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/e9bc34/ffffff?text=Strikeline®" alt="Strikeline®" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="lader-strikeline" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Strikeline® Premium</h3>
+                            <p class="text-reparo-gray">USB-C, USB-A, Lightning</p>
+                        </div>
+                    </div>
+                     <!-- Apple -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/b166cc/ffffff?text=Apple" alt="Apple" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="other-apple" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple Overig</h3>
+                            <p class="text-reparo-gray">Laadkabels, Earpods, Adapters</p>
+                        </div>
+                    </div>
+                     <!-- Samsung -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/0689d8/ffffff?text=Samsung" alt="Samsung" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="other-samsung" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Overig</h3>
+                            <p class="text-reparo-gray">Laadkabels, Power Adapters</p>
+                        </div>
+                    </div>
+                     <!-- Cygnett -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/ff5a00/ffffff?text=Cygnett" alt="Cygnett" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="other-cygnett" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Cygnett Overig</h3>
+                            <p class="text-reparo-gray">Power Adapters, USB Hubs, HDMI Kabels</p>
+                        </div>
+                    </div>
+                     <!-- Nova NL -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/f49c0e/ffffff?text=NOVA NL" alt="NOVA NL" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="other-nova" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Nova NL</h3>
+                            <p class="text-reparo-gray">Power Adapters, Car-Mount</p>
+                        </div>
+                    </div>
+                     <!-- Xtorm -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/e63309/ffffff?text=xtorm&font=poppins" alt="xtorm" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <span id="other-cygnett" class="text-white font-bold text-lg cursor-pointer hover:underline">Bekijk producten</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Xtorm</h3>
+                            <p class="text-reparo-gray">Power Adapters, Powerbanken, Adapters, Reisrugzakken</p>
+                        </div>
+                    </div>
+                </div>
+            </tabsection>
+        </section>
                  <!-- Over Ons Sectie -->
         <section id="over-ons" class="section py-16 bg-white">
             <div class="container mx-auto px-6">
