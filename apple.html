@@ -102,7 +102,7 @@
             left: 0;
             right: 0;
             text-align: center;
-            transition: transform 0.4s ease, opacity 0.4s ease; 
+            transition: transform 0.4s ease, opacity 0.4s ease;
             font-size: 1.2em;
         }
         #mobile-menu-button .icon-wrapper .menuIcon {
@@ -123,13 +123,12 @@
             transform: translateY(0);
             opacity: 1;
         }
-        #mobile-menu {transition: display 0.4s ease-in;}
         tabcontent {
             color: white;
+            display: none;
             padding: 100px 20px;
             height: 100%;
         }
-        .tablink-prnt{display:table; width: 100%;}
         .tablink {
             color: white;
             width: 30%;
@@ -138,7 +137,7 @@
             cursor: pointer;
             padding: 14px 16px;
             font-size: 21px;
-            display: table-cell;
+            display:inline-block;
             font-family: 'Circular Std Medium', 'Ubuntu', 'Roboto';
         }
     </style>
@@ -323,63 +322,65 @@
                 <h2 class="text-3xl font-bold text-center mb-2">Onze Producten</h2>
                 <p class="text-center text-reparo-gray mb-8 max-w-2xl mx-auto">Ontdek ons zorgvuldig geselecteerde aanbod van nieuwe en refurbished toestellen en de beste accessoires.</p>
                 <!-- Nieuw vs Refurbished -->
-                <div class="tablink-prnt">
-                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-2 sm:ml-8" onclick="openPage('nieuw', this)" id="defaultOpen">Nieuwe producten</button>
-                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-5 sm:ml-8" onclick="openPage('refurbished', this)">Refurbished producten</button>
-                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-5 sm:ml-8" onclick="openPage('accessoires', this)">Accessoires</button>
-                </div> 
-                <tabsection id="nieuw" class="py-16">
+                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-8" onclick="openPage('nieuw', this)" id="defaultOpen">Nieuwe producten</button>
+                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-8" onclick="openPage('refurbished', this)">Refurbished producten</button>
+                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-" onclick="openPage('accessoires', this)">Accessoires</button>
+                 <tabsection id="nieuw" class="py-16">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
                     <!-- Product Card 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <div class="relative">
-                            <img src="https://placehold.co/600x600/3b82f6/ffffff?text=iPhone" alt="iPhone" class="w-full h-64 object-cover">
+                            <img src="https://placehold.co/600x600/3b82f6/ffffff?text=iPhone+15" alt="iPhone 15" class="w-full h-64 object-cover">
                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span id="iphone-new" class="text-white font-bold text-lg">Bekijk details</span>
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold">Apple iPhones</h3>
+                            <h3 class="text-lg font-semibold">Apple iPhone 15</h3>
                             <p class="text-reparo-gray">Nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 899,-</p>
                         </div>
                     </div>
                     <!-- Product Card 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <div class="relative">
-                            <img src="https://placehold.co/600x600/10b981/ffffff?text=Galaxy S" alt="Samsung Galaxy S" class="w-full h-64 object-cover">
+                            <img src="https://placehold.co/600x600/10b981/ffffff?text=Samsung+S23" alt="Samsung Galaxy S23" class="w-full h-64 object-cover">
                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span id="galaxy-s-new" class="text-white font-bold text-lg">Bekijk details</span>
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold">Samsung Galaxy S</h3>
+                            <h3 class="text-lg font-semibold">Samsung Galaxy S23</h3>
                             <p class="text-reparo-gray">Nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 749,-</p>
                         </div>
                     </div>
                     <!-- Product Card 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <div class="relative">
-                            <img src="https://placehold.co/600x600/f59e0b/ffffff?text=Galaxy+A" alt="Samsung Galaxy A" class="w-full h-64 object-cover">
+                            <img src="https://placehold.co/600x600/f59e0b/ffffff?text=Refurbished" alt="Refurbished iPhone 12" class="w-full h-64 object-cover">
                              <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span id="galaxy-a-new" class="text-white font-bold text-lg">Bekijk details</span>
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold">Samsung Galaxy A</h3>
-                            <p class="text-reparo-gray">Nieuw</p>
+                            <h3 class="text-lg font-semibold">Refurbished iPhone 12</h3>
+                            <p class="text-reparo-gray">Zo goed als nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 429,-</p>
                         </div>
                     </div>
                      <!-- Product Card 4 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
                         <div class="relative">
-                            <img src="https://placehold.co/600x600/6366f1/ffffff?text=Anders" alt="Anders" class="w-full h-64 object-cover">
+                            <img src="https://placehold.co/600x600/6366f1/ffffff?text=Accessoires" alt="Telefoonhoesje" class="w-full h-64 object-cover">
                              <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span id="other-new" class="text-white font-bold text-lg">Bekijk details</span>
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold">Overig</h3>
-                            <p class="text-reparo-gray">Nieuw</p>
+                            <h3 class="text-lg font-semibold">Lederen Telefoonhoes</h3>
+                            <p class="text-reparo-gray">Accessoire</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 29,95</p>
                         </div>
                     </div>
                 </div>
@@ -390,8 +391,69 @@
                  <tabsection id="accessoires" class="py-16">
                     
                  </tabsection>
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/3b82f6/ffffff?text=iPhone+15" alt="iPhone 15" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Apple iPhone 15</h3>
+                            <p class="text-reparo-gray">Nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 899,-</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/10b981/ffffff?text=Samsung+S23" alt="Samsung Galaxy S23" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Samsung Galaxy S23</h3>
+                            <p class="text-reparo-gray">Nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 749,-</p>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/f59e0b/ffffff?text=Refurbished" alt="Refurbished iPhone 12" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Refurbished iPhone 12</h3>
+                            <p class="text-reparo-gray">Zo goed als nieuw</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 429,-</p>
+                        </div>
+                    </div>
+                     <!-- Product Card 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x600/6366f1/ffffff?text=Accessoires" alt="Telefoonhoesje" class="w-full h-64 object-cover">
+                             <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg">Bekijk details</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Lederen Telefoonhoes</h3>
+                            <p class="text-reparo-gray">Accessoire</p>
+                            <p class="text-xl font-bold text-blue-600 mt-2">€ 29,95</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                 <!-- Over Ons Sectie -->
+        <!-- Over Ons Sectie -->
         <section id="over-ons" class="section py-16 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center">
@@ -532,7 +594,6 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            document.getElementsByClassName('icon-wrapper')[0].classList.toggle('open')
         });
 
         // Single-page navigation
@@ -561,77 +622,10 @@
             
             // Close mobile menu on click
             mobileMenu.classList.add('hidden');
-            document.getElementsByClassName('icon-wrapper')[0].classList.remove('open')
             
             // Scroll to top of the page to show the section
             window.scrollTo(0, 0);
         }
-
-        // Set initial active state based on hash or default to home
-        document.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash.substring(1);
-            if (hash) {
-                showSection(hash);
-            } else {
-                showSection('home');
-            }
-        });
-        
-        // Handle nav link clicks
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const id = e.target.getAttribute('href').substring(1);
-                showSection(id);
-                window.history.pushState(null, null, `#${id}`);
-            });
-        });
-        
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const id = e.target.getAttribute('href').substring(1);
-                showSection(id);
-                window.history.pushState(null, null, `#${id}`);
-            });
-        });
-
-
-        // --- NIEUWE CODE VOOR FORMULIER VERZENDING ---
-        const reparatieForm = document.getElementById('reparatieForm');
-        const formResponseContainer = document.getElementById('form-response');
-        const formContainer = document.getElementById('form-container');
-
-        reparatieForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const submitButton = reparatieForm.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'Moment...';
-            formResponseContainer.innerHTML = '';
-
-            const formData = new FormData(reparatieForm);
-
-            fetch('assets/php/handler.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json().then(data => ({ ok: response.ok, data })))
-            .then(({ ok, data }) => {
-                if (ok) {
-                    reparatieForm.style.display = 'none';
-                    formContainer.innerHTML = `<div class="text-center p-4 bg-green-100 text-green-800 rounded-lg">${data.message}</div>`;
-                } else {
-                    throw new Error(data.message || 'Er is een onbekende serverfout opgetreden.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                formResponseContainer.innerHTML = `<div class="mt-4 text-center p-3 bg-red-100 text-red-800 rounded-lg">${error.message}</div>`;
-                submitButton.disabled = false;
-                submitButton.innerHTML = 'Verstuur aanvraag';
-            });
-        });
 
         // Footer year
         document.getElementById('year').textContent = new Date().getFullYear();
