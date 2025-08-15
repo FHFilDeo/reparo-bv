@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 // Zorg ervoor dat PHPMailer is geladen. Als je Composer gebruikt, is dit beter.
 // require 'vendor/autoload.php'; 
 // Voor dit voorbeeld gebruiken we de directe include.
-include('smtp/PHPMailerAutoload.php');
+include('./smtp/PHPMailerAutoload.php');
 
 /**
  * Functie om een e-mail te versturen via SMTP.
