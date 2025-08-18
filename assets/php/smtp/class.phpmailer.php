@@ -70,20 +70,20 @@ class PHPMailer
      * The From email address for the message.
      * @var string
      */
-    public $From = 'fhfildeo@proton.me';
+    public $From = 'root@localhost';
 
     /**
      * The From name of the message.
      * @var string
      */
-    public $FromName = 'Reparo.nl Reparatieaanmeldingen';
+    public $FromName = 'Root User';
 
     /**
      * The Sender email (Return-Path) of the message.
      * If not empty, will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode.
      * @var string
      */
-    public $Sender = 'fhfildeo@proton.me';
+    public $Sender = '';
 
     /**
      * The Return-Path of the message.

@@ -31,7 +31,7 @@ function smtp_mailer($to, $subject, $msg, $replyToEmail, $replyToName){
         $mail->Host       = 'smtp.gmail.com'; // Stel de SMTP server in
         $mail->SMTPAuth   = true;
         $mail->Username   = 'fhfildeo@proton.me'; // JOUW GMAIL ADRES
-        $mail->Password   = 'cqwp kgwf fghv qnbd'; // JOUW GMAIL APP-WACHTWOORD
+        $mail->Password   = 'cqwpkgwffghvqnbd'; // JOUW GMAIL APP-WACHTWOORD
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
