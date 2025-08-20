@@ -1,79 +1,71 @@
 <?php
-// Gebruik 'use' om de PHPMailer classes te importeren
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Gebruik de PHPMailer classes
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Zorg ervoor dat PHPMailer is geladen. Als je Composer gebruikt, is dit beter.
-// require 'vendor/autoload.php'; 
-// Voor dit voorbeeld gebruiken we de directe include.
-include('./smtp/PHPMailerAutoload.php');
+// Laad de PHPMailer bibliotheek
+require './smtp/PHPMailerAutoload.php';
+require './smtp/PHPMailer/PHPMailer/src/Exception.php';
+require './smtp/PHPMailer/PHPMailer/src/PHPMailer.php';
+require './smtp/PHPMailer/PHPMailer/src/SMTP.php';
 
-/**
- * Functie om een e-mail te versturen via SMTP.
- *
- * BELANGRIJK: Het direct opslaan van inloggegevens in de code is een groot veiligheidsrisico.
- * In een productieomgeving is het sterk aanbevolen om 'environment variables' of een
- * beveiligd configuratiebestand te gebruiken.
- *
- * @param string $to Het e-mailadres van de ontvanger.
- * @param string $subject Het onderwerp van de e-mail.
- * @param string $msg De HTML-body van de e-mail.
- * @param string $replyToEmail Het e-mailadres van de klant voor de 'Reply-To' header.
- * @param string $replyToName De naam van de klant voor de 'Reply-To' header.
- * @return string 'Sent' bij succes, of een foutmelding bij falen.
- */
+// Functie om de e-mail te versturen
 function smtp_mailer($to, $subject, $msg, $replyToEmail, $replyToName){
     $mail = new PHPMailer(true); // 'true' zet exceptions aan
     try {
-        //Server-instellingen
-        // $mail->SMTPDebug = 2; // Aanzetten voor uitgebreide debug output
+        // --- Server-instellingen ---
+        // $mail->SMTPDebug = 2; // Haal commentaar weg voor gedetailleerde debug output in de server logs
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; // Stel de SMTP server in
+        $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'fhfildeo@proton.me'; // JOUW GMAIL ADRES
-        $mail->Password   = 'cqwpkgwffghvqnbd'; // JOUW GMAIL APP-WACHTWOORD
+        $mail->Username   = $_ENV['EMAIL_ADDRESS']; // VUL HIER JE VOLLEDIGE GMAIL ADRES IN
+        $mail->Password   = $_ENV['EMAIL_APP_PASSWORD'];  // VUL HIER JE GMAIL APP-WACHTWOORD IN (16 tekens)
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
-        // Ontvangers
-        $mail->setFrom('fhfildeo@proton.me', 'Reparo.nl Reparatieaanvragen');
-        $mail->addAddress($to); // Voeg de ontvanger toe (info@reparo.nl)
+        // --- Ontvangers ---
+        $mail->setFrom('fhfildeo@proton.me', 'Reparo Website Formulier'); // 'Van' adres
+        $mail->addAddress($to); // 'Aan' adres (info@reparo.nl)
         $mail->addReplyTo($replyToEmail, $replyToName); // Zodat je direct de klant kunt beantwoorden
 
-        // Inhoud
+        // --- Inhoud ---
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
         $mail->Subject = $subject;
         $mail->Body    = $msg;
-        $mail->AltBody = strip_tags($msg); // Alternatieve body voor non-HTML mail clients
+        $mail->AltBody = strip_tags($msg); // Voor e-mailclients die geen HTML ondersteunen
 
         $mail->send();
         return 'Sent';
     } catch (Exception $e) {
-        // Geef de foutmelding terug voor logging
-        return "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // Geef een gedetailleerde foutmelding terug als het misgaat
+        return "De e-mail kon niet worden verstuurd. Fout: {$mail->ErrorInfo}";
     }
 }
 
-// Controleer of het een POST request is
+// Controleer of het formulier is verstuurd
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Haal de data op en sanitize deze
+    // Haal de data op en maak deze veilig
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
     $device = htmlspecialchars(trim($_POST['device']));
     $issue = htmlspecialchars(trim($_POST['issue']));
 
-    // Simpele validatie
+    // Server-side validatie
     if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($device) || empty($issue)) {
         http_response_code(400); // Bad Request
         echo json_encode(['status' => 'error', 'message' => 'Vul alstublieft alle velden correct in.']);
         exit();
     }
 
-    $to = "fhfildeo@proton.me"; // Hier komt de e-mail binnen
+    // Stel de e-mailgegevens samen
+    $to = "info@reparo.nl";
     $subject = "Nieuwe reparatieaanvraag van " . $name;
-
-    // Maak een nette HTML-body voor de e-mail
     $body = "
         <html>
         <body style='font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6;'>
@@ -97,9 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result === 'Sent') {
         echo json_encode(['status' => 'success', 'message' => 'Bedankt voor je aanvraag! We nemen zo snel mogelijk contact met je op.']);
     } else {
-        error_log($result); // Log de fout op de server
         http_response_code(500); // Internal Server Error
-        echo json_encode(['status' => 'error', 'message' => 'Er is iets fout gegaan bij het versturen. Probeer het later opnieuw.']);
+        echo json_encode(['status' => 'error', 'message' => $result]); // Stuur de specifieke foutmelding terug
     }
     exit();
 }
