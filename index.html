@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/img/Hart_Plauw_PixelLove.png" type="image/x-icon">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -69,7 +70,7 @@
             align-self: flex-end;
             display: inline-flex;
             font-size: 26px;
-            font-family: 'Circular Std Medium';
+            font-family: 'DM Sans';
             img {
                 padding-left: 15px;
                 display: block;
@@ -143,9 +144,8 @@
             outline: none;
             cursor: pointer;
             padding: 14px 16px;
-            font-size: 21px;
             display: table-cell;
-            font-family: 'Circular Std Medium', 'Ubuntu', 'Roboto';
+            font-family: 'DM Sans', 'Ubuntu', 'Roboto';
         }
     </style>
 
@@ -330,9 +330,9 @@
                 <p class="text-center text-reparo-gray mb-8 max-w-2xl mx-auto">Ontdek ons zorgvuldig geselecteerde aanbod van nieuwe en refurbished toestellen en de beste accessoires.</p>
                 <!-- Nieuw vs Refurbished -->
                 <div class="tablink-prnt">
-                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-2 sm:ml-8" onclick="openPage('nieuw', this)" id="defaultOpen">Nieuwe producten</button>
-                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-5 sm:ml-8" onclick="openPage('refurbished', this)">Refurbished producten</button>
-                <button class="tablink rounded-lg bg-reparo-light hover:bg-reparo mb-8 ml-5 sm:ml-8" onclick="openPage('accessoires', this)">Accessoires</button>
+                <span class="tablink"><button class="rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8 ml-1 lg:ml-8" onclick="openPage('nieuw', this)" id="defaultOpen">Nieuwe producten</button></span>
+                <span class="tablink"><button class="rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8 ml-3 lg:ml-8" onclick="openPage('refurbished', this)">Refurbished producten</button></span>
+                <span class="tablink"><button class="rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8 ml-3 lg:ml-8" onclick="openPage('accessoires', this)">Accessoires</button></span>
                 </div> 
                 <tabsection id="nieuw" class="py-16">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
