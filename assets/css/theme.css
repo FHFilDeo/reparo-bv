@@ -1,0 +1,91 @@
+        @import "tailwindcss";
+        @theme {
+            --font-display: "DM Sans", "Inter", "Ubuntu", "Roboto", "sans-serif"; 
+            --color-reparo: rgb(0, 48, 87);
+            --color-reparo-dark: rgb(32, 41, 69);
+            --color-reparo-light: rgb(0, 83, 139);
+            --color-reparo-gray: rgb(77, 88, 88);
+            --color-reparo-yellow: rgb(192, 175, 13);
+
+            --breakpoint-sg: 22.5rem;
+        }
+        /* Normal styling */
+        body {
+            transition-duration: 3.4s;
+        }
+        #whatsapp-container {
+            text-align: right;
+            align-self: flex-end;
+            display:flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+        #whatsapp {
+            align-self: flex-end;
+            display: inline-flex;
+            font-size: 26px;
+            img {
+                padding-left: 15px;
+                display: block;
+            }
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .nav-link.active {
+            color: var(--color-reparo);
+            font-weight: 600;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .logo-no-height-constrain {
+            object-position: center !important;
+        }
+        /* text outline correction */
+        div.group div div span {
+            text-shadow: 1px 1px black;
+        }
+        /* Menu */
+        #mobile-menu-button .icon-wrapper {
+            position: relative;
+            width: 1.2em;
+            height: 1.2em;
+            display: inline-block;
+        }
+        #mobile-menu-button .icon-wrapper .menuIcon,
+        #mobile-menu-button .icon-wrapper .closeIcon {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            transition: transform 0.4s ease, opacity 0.4s ease; 
+            font-size: 1.2em;
+        }
+        #mobile-menu-button .icon-wrapper .menuIcon {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        #mobile-menu-button .icon-wrapper .closeIcon {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        #mobile-menu-button .icon-wrapper.open .menuIcon,
+        #mobile-menu-button .icon-wrapper.open .menuIcon .lucide.lucide-menu {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        #mobile-menu-button .icon-wrapper.open .closeIcon,
+        #mobile-menu-button .icon-wrapper.open .closeIcon .lucide.lucide-x {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        #mobile-menu {transition: display 0.4s ease-in;}
+        tabcontent {
+            color: white;
+            padding: 100px 20px;
+            height: 100%;
+        }
