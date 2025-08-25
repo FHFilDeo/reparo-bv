@@ -12,51 +12,19 @@
     <link rel="icon" href="assets/img/Hart_Plauw_PixelLove.png" type="image/x-icon">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Reparo Colorstyling */
-            /* Background */
-                .bg-reparo, .hover\:bg-reparo:hover {
-                    background-color: #003057;
-                }
-                .bg-reparo-dark, .hover\:bg-reparo-dark:hover {
-                    background-color: #202945;
-                }
-                .bg-reparo-light, .hover\:bg-reparo-light:hover {
-                    background-color: #00538b;
-                }
-                .bg-reparo-gray, .hover\:bg-reparo-gray:hover {
-                    background-color: #4d5858;
-                }
-                .bg-reparo-yellow, .hover\:bg-reparo-yellow:hover {
-                    background-color: #c0af0d;
-                }
-            /* Text-color */
-                .text-reparo, .hover\:text-reparo:hover {
-                    color: #003057;
-                }
-                .text-reparo-dark, .hover\:text-reparo-dark:hover {
-                    color: #202945;
-                }
-                .text-reparo-light, .hover\:text-reparo-light:hover {
-                    color: #00538b;
-                }
-                .text-reparo-gray, .hover\:text-reparo-gray:hover {
-                    color: #4d5858;
-                }
-                .text-reparo-yellow, .hover\:text-reparo-yellow:hover {
-                    color: #c0af0d;
-                }      
-            /* Border color */
-                .focus\:ring-reparo:focus {
-                    --tw-ring-opacity: 1;
-                    border-color: #00538b;
-                    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-                    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-                    --tw-ring-color: #00538baa;
-                    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-                }
+        @import "tailwindcss";
+        @theme {
+            --font-display: "DM Sans", "Inter", "Ubuntu", "Roboto", "sans-serif"; 
+            --color-reparo: rgb(0, 48, 87);
+            --color-reparo-dark: rgb(32, 41, 69);
+            --color-reparo-light: rgb(0, 83, 139);
+            --color-reparo-gray: rgb(77, 88, 88);
+            --color-reparo-yellow: rgb(192, 175, 13);
+
+            --breakpoint-sg: 22.5rem;
+        }
         /* Normal styling */
         body {
-            font-family: 'Inter', sans-serif;
             transition-duration: 3.4s;
         }
         #whatsapp-container {
@@ -70,7 +38,6 @@
             align-self: flex-end;
             display: inline-flex;
             font-size: 26px;
-            font-family: 'DM Sans';
             img {
                 padding-left: 15px;
                 display: block;
@@ -83,7 +50,7 @@
             display: block;
         }
         .nav-link.active {
-            color: #003057;
+            color: var(--color-reparo);
             font-weight: 600;
         }
         html {
@@ -135,17 +102,6 @@
             color: white;
             padding: 100px 20px;
             height: 100%;
-        }
-        .tablink-prnt{display:table; width: 100%;}
-        .tablink {
-            color: white;
-            width: 30%;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            display: table-cell;
-            font-family: 'DM Sans', 'Ubuntu', 'Roboto';
         }
     </style>
 
@@ -329,10 +285,10 @@
                 <h2 class="text-3xl font-bold text-center mb-2">Onze Producten</h2>
                 <p class="text-center text-reparo-gray mb-8 max-w-2xl mx-auto">Ontdek ons zorgvuldig geselecteerde aanbod van nieuwe en refurbished toestellen en de beste accessoires.</p>
                 <!-- Nieuw vs Refurbished -->
-                <div class="tablink-prnt">
-                <span class="tablink"><button class="rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8 ml-1 lg:ml-8" onclick="openPage('nieuw', this)" id="defaultOpen">Nieuwe producten</button></span>
-                <span class="tablink"><button class="rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8 ml-3 lg:ml-8" onclick="openPage('refurbished', this)">Refurbished producten</button></span>
-                <span class="tablink"><button class="rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8 ml-3 lg:ml-8" onclick="openPage('accessoires', this)">Accessoires</button></span>
+                <div class="tablink-prnt grid grid-cols-3 gap-3 lg:gap-8 mx-auto">
+                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('nieuw', this)" id="defaultOpen">Nieuwe producten</button>
+                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('refurbished', this)">Refurbished producten</button>
+                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('accessoires', this)">Accessoires</button>
                 </div> 
                 <tabsection id="nieuw" class="py-16">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
