@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>503 | Reparo BV - Niet beschikbaar</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* voorkomt scrollen */
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 90%;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #013366;
+      margin: 0 0 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 0 0 15px;
+      color: #444;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (max-height: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .logo {
+        width: 90px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="/assets/img/Hart_Plauw_PixelLove.png" alt="Reparo logo" class="logo">
+
+    <h1>503 – Niet beschikbaar</h1>
+    <p>Oeps... Onze website is momenteel even niet bereikbaar.</p>
+    <br>
+    <p>We zijn hard aan het werk met gepland onderhoud of de server is momenteel overbelast.<br>
+      Dit is slechts tijdelijk en we verwachten snel weer online te zijn.<br>
+      Probeer de pagina over een paar minuten opnieuw te laden.<br><br>
+      Bedankt voor je geduld!
+    </p>
+  </div>
+
+  <div class="footer">
+    © <span id="year"></span> Reparo B.V. – Reparatie & verkoop van smartphones en tablets
+  </div>
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

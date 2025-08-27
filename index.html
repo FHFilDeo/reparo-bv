@@ -880,14 +880,14 @@
                                     <i data-lucide="phone" class="w-6 h-6 mr-4 mt-1"></i>
                                     <div>
                                         <h4 class="font-semibold">Bel ons</h4>
-                                        <p id="tel">0548 20 10 12</p>
+                                        <p id="tel" class="cursor-pointer hover:underline">0548 20 10 12</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
                                     <i data-lucide="mail" class="w-6 h-6 mr-4 mt-1"></i>
                                     <div>
                                         <h4 class="font-semibold">Mail ons</h4>
-                                        <p id="mailto">info@reparo.nl</p>
+                                        <p id="mailto" class="cursor-pointer hover:underline">info@reparo.nl</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
@@ -1065,8 +1065,8 @@
         const instagram = document.getElementById('instagram')
         const facebook = document.getElementById('facebook')
         const whatsapp = document.getElementById('whatsapp')
-        mailto.onclick = () => {window.open('mailto:' + mailto.innerText, "_blank")}
-        tel.onclick = () => {window.open('tel:+31548201012', "_blank")}
+        mailto.onclick = () => {window.open('mailto:' + mailto.innerText, "_self")}
+        tel.onclick = () => {window.open('tel:+31548201012', "_self")}
         instagram.onclick = () => {window.open('https://facebook.com/Reparonl', "_blank")}
         facebook.onclick = () => {window.open('https://instagram.com/Reparonl', "_blank")}
         whatsapp.onclick = () => {window.open('https://api.whatsapp.com/send/?phone=31627100140&type=phone_number&app_absent=0&text=Ik%20heb%20een%20vraag')}
