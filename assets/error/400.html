@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>400 | Reparo BV - Verkeerde gegevens</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* voorkomt scrollen */
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 90%;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #013366;
+      margin: 0 0 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 0 0 15px;
+      color: #444;
+    }
+
+    button {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #013366;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00538b;
+      text-shadow: 3px 4px 8px 0px #333;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    hr {
+        border-radius: 15px;
+        border-color: #999;
+        border-style: solid;
+        box-shadow: 0.7px 1px 4px 0px #333;
+        border-width:1px;
+        height:3px;
+        background-color: #999;
+        margin-bottom: 15px;
+        margin-top: 25px;
+    }
+
+    @media (max-height: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .logo {
+        width: 90px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="/assets/img/Hart_Plauw_PixelLove.png" alt="Reparo logo" class="logo">
+
+    <h1>400 – Verkeerde gegevens</h1>
+    <p>Oeps… er ging iets mis met je aanvraag</p>
+    <p>Het lijkt erop dat de pagina of actie die je probeerde te openen niet helemaal goed is doorgekomen.
+      Geen zorgen, dit ligt meestal niet aan jou. Probeer het gerust opnieuw, of ga terug naar de homepagina om verder te gaan.</p>
+<p>Kom je er niet uit? Neem dan contact met ons op:</p>
+    <button id="contact">Contact opnemen</button>
+    <hr>
+    <button id="home">Terug naar home</button>
+  </div>
+
+  <div class="footer">
+    © <span id="year"></span> Reparo B.V. – Reparatie & verkoop van smartphones en tablets
+  </div>
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Hyperlinks
+    const home = document.getElementById('home');
+    const contact = document.getElementById('contact');
+    home.addEventListener('click', () => {
+        home.innerHTML = "Openen."
+        setTimeout(() => {home.innerHTML += "."}, 1000);
+        setTimeout(() => {home.innerHTML += "."}, 2000);
+        setTimeout(() => {home.innerHTML = "Terug naar Home"}, 2200)
+        setTimeout(() => {window.open("/", "_self")}, 3250);
+    });
+    contact.addEventListener('click', () => {
+        contact.innerHTML = "Openen."
+        setTimeout(() => {contact.innerHTML += "."}, 1000);
+        setTimeout(() => {contact.innerHTML += "."}, 2000);
+        setTimeout(() => {contact.innerHTML = "Contact opnemen"}, 2200);
+        setTimeout(() => {window.open("/#contact", "_self")}, 3250);
+    })
+  </script>
+</body>
+</html>
