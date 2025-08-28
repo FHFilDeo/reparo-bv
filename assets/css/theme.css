@@ -20,15 +20,6 @@
             justify-content: flex-end;
             width: 100%;
         }
-        #whatsapp {
-            align-self: flex-end;
-            display: inline-flex;
-            font-size: 26px;
-            img {
-                padding-left: 15px;
-                display: block;
-            }
-        }
         .section {
             display: none;
         }
