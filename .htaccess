@@ -3,3 +3,17 @@ ErrorDocument 403 /assets/error/403.html
 ErrorDocument 404 /assets/error/404.html
 ErrorDocument 500 /assets/error/500.html
 ErrorDocument 503 /assets/error/503.html
+
+# Zet mod_rewrite aan
+RewriteEngine On
+
+# Sta toegang toe tot:
+# - index.html
+# - root URL /
+# - assets zoals .css, .js, .png, .jpg, .jpeg, .gif, .svg, .woff, .woff2, .ttf, .eot, .ico, .webp
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/index\.html$
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico|webp|php|html)$ [NC]
+
+# Als het niet aan bovenstaande voorwaarden voldoet: geef 403
+RewriteRule ^.*$ - [F,L]

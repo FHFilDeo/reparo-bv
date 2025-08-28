@@ -59,21 +59,21 @@
             <!-- Services -->
             <div class="container mx-auto px-6 py-16">
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div id="service1" class="bg-white p-8 rounded-lg shadow-md text-center">
                         <div class="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                             <i data-lucide="smartphone" class="text-reparo"></i>
                         </div>
                         <h3 class="text-xl font-bold text-reparo mb-2">Verkoop</h3>
                         <p class="text-reparo-gray">Ontdek ons ruime aanbod van de nieuwste smartphones en tablets, en scherp geprijsde refurbished toestellen.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div id="service2" class="bg-white p-8 rounded-lg shadow-md text-center">
                         <div class="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                             <i data-lucide="wrench" class="text-reparo"></i>
                         </div>
                         <h3 class="text-xl font-bold text-reparo mb-2">Reparaties</h3>
                         <p class="text-reparo-gray">Defect toestel? Voor 10:00 gebracht, is eind van de middag klaar. Snelle service met 6 maanden garantie.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div id="service3" class="bg-white p-8 rounded-lg shadow-md text-center">
                         <div class="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                             <i data-lucide="shopping-bag" class="text-reparo"></i>
                         </div>
@@ -88,19 +88,19 @@
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl font-bold text-reparo text-center mb-8">Wat onze klanten zeggen</h2>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-gray-50 p-6 rounded-lg">
+                        <div id="testimonial1" class="bg-gray-50 p-6 rounded-lg cursor-pointer">
                             <div class="flex items-center mb-2">
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
-                                <span class="text-yellow-500"><i data-lucide="star-half" class="fill-current"></i></span>
-                                <span class="ml-2 font-bold">4.5 van 5</span>
+                                <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                                <span class="ml-2 font-bold">5 van 5</span>
                             </div>
-                            <p class="text-reparo-gray mb-4">"Super snelle service & producten altijd snel geleverd. De werknemers geven deskundig advies en zijn erg vriendelijk!"</p>
-                            <p class="font-bold">- Beeldbakkers</p>
+                            <p class="text-reparo-gray mb-4">"Uitzonderlijke service – wat een topbedrijf! Vanaf het begin tot het einde voelde ik me serieus genomen als klant. Wat een behulpzame, betrokken en professionele medewerkers! Ze luisterden écht, dachten mee, en zorgden ervoor dat alles vlekkeloos werd geregeld. Reparo BV mag zich gelukkig prijzen met toppers in het team. Van harte aanbevolen!"</p>
+                            <p class="font-bold">- Ricardo Mondria</p>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg">
+                        <div id="testimonial2" class="bg-gray-50 p-6 rounded-lg cursor-pointer">
                              <div class="flex items-center mb-2">
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
@@ -109,10 +109,10 @@
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
                                 <span class="ml-2 font-bold">5 van 5</span>
                             </div>
-                            <p class="text-reparo-gray mb-4">"Mijn scherm was gebroken. Direct geholpen en binnen een half uur was er een nieuw scherm gemonteerd. Top service!"</p>
-                            <p class="font-bold">- Niek Wopereis</p>
+                            <p class="text-reparo-gray mb-4">"Deze heren weten wel wat klantenservice is! Zo kwam ik met mijn telefoon binnen die niks meer deed, aangezien we dat weekend het pinksterweekend ingingen en ik geen extra telefoon, hebben ze toch net zolang als nodig was (zelfs ruim na sluitingstijd 1-2uur!!) geprobeerd om de telefoon aan de praat te krijgen aangezien het leek op "einde verhaal" Hebben we samen opties doorgesproken zodat ik daar uiteindelijk weg kon gaan met een oplossing! Dit vind ik zo top! Nogmaals Dankjewel voor de service (want deze vind je bijna nergens meer)"</p>
+                            <p class="font-bold">- CanDo_ATtiTudeZ (B_LæN)</p>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg">
+                        <div id="testimonial3" class="bg-gray-50 p-6 rounded-lg cursor-pointer">
                              <div class="flex items-center mb-2">
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
@@ -121,9 +121,21 @@
                                 <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
                                 <span class="ml-2 font-bold">5 van 5</span>
                             </div>
-                            <p class="text-reparo-gray mb-4">"Nette prima service! Telefoon klaar terwijl je wacht en goeie koffie. Echt jongens met verstand van reparatie!"</p>
-                            <p class="font-bold">- Robert Gerrits</p>
+                            <p class="text-reparo-gray mb-4">"echt een geweldig leuk super gaaf tof bedrijf, ik kwam mijn tellie langs deze niffos brengen en de reparateur bas heeft hem binnen 3 uur en 26 minuten al weer gefixt, deze alphas zetten mij altijd goed, dikke respect naar deze mensjes die hier werken en ze moeten zo door gaan, yea!"</p>
+                            <p class="font-bold">- Aiden Dannenberg</p>
                         </div>
+                    </div>
+                    <div id="testimonialmain" class="bg-gray-50 mt-12 items-center text-center justify-center rounded-lg cursor-pointer">
+                        <h3 class="text-3xl font-bold text-reparo text-center mb-8">Wij scoren gemiddeld:</h3>
+                        <div class="flex items-center justify-center">
+                            <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                            <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                            <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                            <span class="text-yellow-500"><i data-lucide="star" class="fill-current"></i></span>
+                            <span class="text-yellow-500"><i data-lucide="star-half" class="fill-current"></i></span>
+                            <span class="ml-2 font-bold">4.6 van 5</span>
+                        </div>
+                        <a href="#" class="text-reparo-yellow font-bold text-2xl hover:underline">Bekijk al onze reviews</a>
                     </div>
                 </div>
             </div>
@@ -192,9 +204,9 @@
                 <p class="text-center text-reparo-gray mb-8 max-w-2xl mx-auto">Ontdek ons zorgvuldig geselecteerde aanbod van nieuwe en refurbished toestellen en de beste accessoires.</p>
                 <!-- Nieuw vs Refurbished -->
                 <div class="tablink-prnt grid grid-cols-3 gap-3 lg:gap-8 mx-auto">
-                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('nieuw', this)" id="defaultOpen">Nieuwe producten</button>
-                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('refurbished', this)">Refurbished producten</button>
-                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('accessoires', this)">Accessoires</button>
+                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('nieuw', this)" id="defaultOpen nieuwBTN">Nieuwe producten</button>
+                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('refurbished', this)" id="refurbishedBTN">Refurbished producten</button>
+                <button class="tablink cursor-pointer px-[14px] py-[16px] outline-none border-none w-full text-white table-cell rounded-lg bg-reparo-light hover:bg-reparo text-base sm:text-xl xl:text-2xl mb-8" onclick="openPage('accessoires', this)" id="accessoiresBTN">Accessoires</button>
                 </div> 
                 <tabsection id="nieuw" class="py-16">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
@@ -1065,11 +1077,24 @@
         const instagram = document.getElementById('instagram')
         const facebook = document.getElementById('facebook')
         const whatsapp = document.getElementById('whatsapp')
+        function testimonial(id) {
+            return document.getElementById("testimonial" + id)
+        }
+        function service(id){
+            return document.getElementById("service" + id)
+        }
         mailto.onclick = () => {window.open('mailto:' + mailto.innerText, "_self")}
         tel.onclick = () => {window.open('tel:+31548201012', "_self")}
         instagram.onclick = () => {window.open('https://facebook.com/Reparonl', "_blank")}
         facebook.onclick = () => {window.open('https://instagram.com/Reparonl', "_blank")}
-        whatsapp.onclick = () => {window.open('https://api.whatsapp.com/send/?phone=31627100140&type=phone_number&app_absent=0&text=Ik%20heb%20een%20vraag')}
+        whatsapp.onclick = () => {window.open('https://api.whatsapp.com/send/?phone=31627100140&type=phone_number&app_absent=0&text=Ik%20heb%20een%20vraag', "_blank")}
+        testimonial('1').onclick = () => {window.open('https://maps.app.goo.gl/BYkYmDmkA5cmt1nV8', "_blank")}
+        testimonial('2').onclick = () => {window.open('https://maps.app.goo.gl/ksBbNyYbvMmTxeKN6', "_blank")}
+        testimonial('3').onclick = () => {window.open('https://maps.app.goo.gl/L7bNehVJmkiQg5R46', "_blank")}
+        testimonial('main').onclick = () => {window.open('https://www.google.com/maps/place/Reparo/@52.3180069,6.51637,14z/data=!4m8!3m7!1s0x47c7f702d3a3aa6b:0x71b1400796d9c27c!8m2!3d52.3226771!4d6.5042366!9m1!1b1!16s%2Fg%2F1s049m4rp?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D0', "_blank")}
+        service('1').onclick = () => {showSection("producten")}
+        service('2').onclick = () => {showSection("reparaties")}
+        service('3').onclick = () => {showSection("producten"); openPage("accessoires", document.getElementById('accessoiresBTN'))}
 
         // Producten API
         function openPage(pageName, thisEMT) {
