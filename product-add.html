@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparo - Producten Toevoegen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div class="container mx-auto mt-10 max-w-lg">
+        <!-- Login Formulier -->
+        <div id="admin-login-view" class="bg-white p-8 rounded-lg shadow-lg">
+            <h1 class="text-2xl font-bold mb-6 text-center">Admin Login</h1>
+            <form id="admin-login-form">
+                <div class="mb-4">
+                    <label for="admin-email" class="block text-gray-700 mb-2">E-mailadres (Admin)</label>
+                    <input type="email" id="admin-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                </div>
+                <div class="mb-6">
+                    <label for="admin-password" class="block text-gray-700 mb-2">Wachtwoord</label>
+                    <input type="password" id="admin-password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">Inloggen</button>
+            </form>
+            <p id="alert" class="w-full bg-red-100 text-red-700 rounded-lg py-1 text-center mt-5 hidden"></p>
+        </div>
+
+        <!-- Product Toevoegen Formulier (standaard verborgen) -->
+        <div id="add-product-view" class="bg-white p-8 rounded-lg shadow-lg hidden">
+            <h1 class="text-2xl font-bold mb-6 text-center">Nieuw Product Toevoegen</h1>
+            <form id="add-product-form">
+                <div class="mb-4">
+                    <label for="product-name" class="block text-gray-700 mb-2">Productnaam</label>
+                    <input type="text" id="product-name" class="w-full px-4 py-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="product-description" class="block text-gray-700 mb-2">Omschrijving</label>
+                    <textarea id="product-description" rows="3" class="w-full px-4 py-2 border rounded-lg"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="product-price" class="block text-gray-700 mb-2">Prijs</label>
+                    <input type="number" step="0.01" id="product-price" class="w-full px-4 py-2 border rounded-lg" required>
+                </div>
+                <div class="mb-6">
+                    <label for="product-image" class="block text-gray-700 mb-2">Afbeelding URL</label>
+                    <input type="text" id="product-image" class="w-full px-4 py-2 border rounded-lg" value="https://" required>
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">Product Opslaan</button>
+                 <p id="success-message" class="text-green-500 text-sm mt-2 text-center"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = '/assets/php/api.php';
+        const loginView = document.getElementById('admin-login-view');
+        const productView = document.getElementById('add-product-view');
+
+        // --- Login Logic ---
+        document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('admin-email').value;
+            const password = document.getElementById('admin-password').value;
+
+            const response = await fetch(`${API_BASE}?endpoint=auth&action=login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            
+            const result = await response.json();
+
+            // BELANGRIJK: controleer of de ingelogde gebruiker de admin is (id 1)
+            if (response.ok && result.user && result.user.id === 1) {
+                loginView.classList.add('hidden');
+                document.getElementById('alert').classList.add('hidden');
+                productView.classList.remove('hidden');
+            } else {
+                document.getElementById('alert').classList.remove('hidden');
+                document.getElementById('alert').innerHTML = "Inloggen mislukt";
+            }
+        });
+
+        // --- Add Product Logic ---
+        document.getElementById('add-product-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const productData = {
+                name: document.getElementById('product-name').value,
+                description: document.getElementById('product-description').value,
+                price: parseFloat(document.getElementById('product-price').value),
+                image_url: document.getElementById('product-image').value
+            };
+
+            const response = await fetch(`${API_BASE}?endpoint=products&action=create`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(productData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                document.getElementById('success-message').textContent = 'Product succesvol opgeslagen!';
+                document.getElementById('add-product-form').reset(); // Maak het formulier leeg
+                setTimeout(() => {
+                    document.getElementById('success-message').textContent = '';
+                }, 3000);
+            } else {
+                alert(`Fout: ${result.message}`);
+            }
+        });
+    </script>
+</body>
+</html>

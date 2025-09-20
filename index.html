@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reparo BV - Jouw expert in smartphones, tablets & reparaties</title>
+    <!-- Google Fonts Import (NIEUW) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/Hart_Plauw_PixelLove.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter&family=Roboto&family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- Einde Google Fonts Import -->
+            <link rel="icon" href="assets/img/Hart_Plauw_PixelLove.png" type="image/x-icon">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="assets/css/output.css" rel="stylesheet">
 </head>
@@ -24,6 +25,10 @@
                 <a href="#producten" class="nav-link text-reparo-gray hover:text-reparo transition duration-300" onclick="showSection('producten')">Producten</a>
                 <a href="#over-ons" class="nav-link text-reparo-gray hover:text-reparo transition duration-300" onclick="showSection('over-ons')">Over Ons</a>
                 <a href="#contact" class="nav-link text-reparo-gray hover:text-reparo transition duration-300" onclick="showSection('contact')">Contact</a>
+                    <!-- Winkelmandje etc. -->
+                    <div id="nav-links" class="space-x-4">
+                        <!-- Wordt dynamisch gevuld -->
+                    </div>
             </nav>
             <button id="mobile-menu-button" class="md:hidden">
                 <span class="icon-wrapper">
@@ -39,6 +44,11 @@
             <a href="#producten" class="block py-2 px-6 text-sm text-reparo-gray hover:bg-gray-100" onclick="showSection('producten')">Producten</a>
             <a href="#over-ons" class="block py-2 px-6 text-sm text-reparo-gray hover:bg-gray-100" onclick="showSection('over-ons')">Over Ons</a>
             <a href="#contact" class="block py-2 px-6 text-sm text-reparo-gray hover:bg-gray-100" onclick="showSection('contact')">Contact</a>
+                <!-- Winkelmandje etc. -->
+                <div id="nav-links" class="space-x-4">
+                    <!-- Wordt dynamisch gevuld -->
+                </div>
+
         </div>
     </header>
 
@@ -921,6 +931,70 @@
                 </div>
             </div>
         </section>
+
+                <!-- Login / Registratie View -->
+        <section id="auth-view" class="section py-16">
+            <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="flex border-b mb-4">
+                    <button id="show-login-btn" class="flex-1 py-2 text-center font-semibold border-b-2 border-reparo text-reparo">Inloggen</button>
+                    <button id="show-register-btn" class="flex-1 py-2 text-center font-semibold text-reparo-gray">Registreren</button>
+                </div>
+                <!-- Login Form -->
+                <form id="login-form">
+                    <div class="mb-4">
+                        <label for="login-email" class="block text-reparo-gray mb-2">E-mailadres</label>
+                        <input type="email" id="login-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-reparo focus:ring-reparo" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="login-password" class="block text-reparo-gray mb-2">Wachtwoord</label>
+                        <input type="password" id="login-password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-reparo focus:ring-reparo" required>
+                    </div>
+                    <button type="submit" class="w-full bg-reparo-dark text-white py-2 rounded-lg hover:bg-reparo-dark transition-colors">Inloggen</button>
+                    <p id="login-error" class="text-red-500 text-sm mt-2 text-center"></p>
+                </form>
+                <!-- Register Form -->
+                <form id="register-form" class="hidden">
+                    <div class="mb-4">
+                        <label for="register-name" class="block text-reparo-gray mb-2">Volledige Naam</label>
+                        <input type="text" id="register-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-reparo focus:ring-reparo" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="register-email" class="block text-reparo-gray mb-2">E-mailadres</label>
+                        <input type="email" id="register-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-reparo focus:ring-reparo" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="register-password" class="block text-reparo-gray mb-2">Wachtwoord</label>
+                        <input type="password" id="register-password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-reparo focus:ring-reparo" required>
+                    </div>
+                    <button type="submit" class="w-full bg-reparo-dark text-white py-2 rounded-lg hover:bg-reparo-dark transition-colors">Registreren</button>
+                    <p id="register-error" class="text-red-500 text-sm mt-2 text-center"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Winkel View -->
+        <section id="shop-view" class="section py-16">
+            <h1 class="text-3xl font-bold mb-6">Producten</h1>
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Producten worden hier geladen -->
+            </div>
+        </section>
+
+        <!-- Winkelmandje View -->
+        <section id="cart-view" class="section py-16">
+            <h1 class="text-3xl font-bold mb-6">Winkelmandje</h1>
+            <div id="cart-container" class="bg-white p-6 rounded-lg shadow-lg">
+                <!-- Winkelmandje items worden hier geladen -->
+            </div>
+        </section>
+
+        <!-- Aankoophistorie View -->
+        <section id="orders-view" class="section py-16">
+            <h1 class="text-3xl font-bold mb-6">Mijn Bestellingen</h1>
+            <div id="orders-container" class="space-y-6">
+                <!-- Bestellingen worden hier geladen -->
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -958,160 +1032,7 @@
         </div>
     </footer>
 
-    <script>
-        // Lucide icons
-        lucide.createIcons();
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            document.getElementsByClassName('icon-wrapper')[0].classList.toggle('open')
-        });
-
-        // Single-page navigation
-        const sections = document.querySelectorAll('.section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
-
-        function showSection(id) {
-            // Hide all sections
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            // Show the target section
-            const targetSection = document.getElementById(id);
-            if(targetSection) {
-                targetSection.classList.add('active');
-            }
-
-            // Update active nav link
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href') === `#${id}`) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Close mobile menu on click
-            mobileMenu.classList.add('hidden');
-            document.getElementsByClassName('icon-wrapper')[0].classList.remove('open')
-            
-            // Scroll to top of the page to show the section
-            window.scrollTo(0, 0);
-        }
-
-        // Set initial active state based on hash or default to home
-        document.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash.substring(1);
-            if (hash) {
-                showSection(hash);
-            } else {
-                showSection('home');
-            }
-        });
-        
-        // Handle nav link clicks
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const id = e.target.getAttribute('href').substring(1);
-                showSection(id);
-                window.history.pushState(null, null, `#${id}`);
-            });
-        });
-        
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const id = e.target.getAttribute('href').substring(1);
-                showSection(id);
-                window.history.pushState(null, null, `#${id}`);
-            });
-        });
-
-
-        // --- NIEUWE CODE VOOR FORMULIER VERZENDING ---
-        const reparatieForm = document.getElementById('reparatieForm');
-        const formResponseContainer = document.getElementById('form-response');
-        const formContainer = document.getElementById('form-container');
-
-        reparatieForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const submitButton = reparatieForm.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'Moment...';
-            formResponseContainer.innerHTML = '';
-
-            const formData = new FormData(reparatieForm);
-
-            fetch('/assets/php/handler.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json().then(data => ({ ok: response.ok, data })))
-            .then(({ ok, data }) => {
-                if (ok) {
-                    reparatieForm.style.display = 'none';
-                    formContainer.innerHTML = `<div class="text-center p-4 bg-green-100 text-green-800 rounded-lg">${data.message}</div>`;
-                } else {
-                    throw new Error(data.message || 'Er is een onbekende serverfout opgetreden.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                formResponseContainer.innerHTML = `<div class="mt-4 text-center p-3 bg-red-100 text-red-800 rounded-lg">${error.message}</div>`;
-                submitButton.disabled = false;
-                submitButton.innerHTML = 'Verstuur aanvraag';
-            });
-        });
-
-        // Footer year
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Hyperlinks
-        const mailto = document.getElementById('mailto')
-        const tel = document.getElementById('tel')
-        const instagram = document.getElementById('instagram')
-        const facebook = document.getElementById('facebook')
-        const whatsapp = document.getElementById('whatsapp')
-        function testimonial(id) {
-            return document.getElementById("testimonial" + id)
-        }
-        function service(id){
-            return document.getElementById("service" + id)
-        }
-        mailto.onclick = () => {window.open('mailto:' + mailto.innerText, "_self")}
-        tel.onclick = () => {window.open('tel:+31548201012', "_self")}
-        instagram.onclick = () => {window.open('https://facebook.com/Reparonl', "_blank")}
-        facebook.onclick = () => {window.open('https://instagram.com/Reparonl', "_blank")}
-        whatsapp.onclick = () => {window.open('https://api.whatsapp.com/send/?phone=31627100140&type=phone_number&app_absent=0&text=Ik%20heb%20een%20vraag', "_blank")}
-        testimonial('1').onclick = () => {window.open('https://maps.app.goo.gl/BYkYmDmkA5cmt1nV8', "_blank")}
-        testimonial('2').onclick = () => {window.open('https://maps.app.goo.gl/ksBbNyYbvMmTxeKN6', "_blank")}
-        testimonial('3').onclick = () => {window.open('https://maps.app.goo.gl/L7bNehVJmkiQg5R46', "_blank")}
-        testimonial('main').onclick = () => {window.open('https://www.google.com/maps/place/Reparo/@52.3180069,6.51637,14z/data=!4m8!3m7!1s0x47c7f702d3a3aa6b:0x71b1400796d9c27c!8m2!3d52.3226771!4d6.5042366!9m1!1b1!16s%2Fg%2F1s049m4rp?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D0', "_blank")}
-        service('1').onclick = () => {showSection("producten")}
-        service('2').onclick = () => {showSection("reparaties")}
-        service('3').onclick = () => {showSection("producten"); openPage("accessoires", document.getElementById('accessoiresBTN'))}
-
-        // Producten API
-        function openPage(pageName, thisEMT) {
-            // Hide all elements with class="tabcontent" by default */
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByTagName("tabsection");
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].classList.add('hidden');
-            tablinks[i].classList.remove('underline');
-        }
-            // Show the specific tab content
-        document.getElementById(pageName).classList.remove('hidden');
-        thisEMT.classList.add('underline')
-    }
-            // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-    </script>
+    <script src="/assets/javascript/home.js"></script>
+    <script src="/assets/javascript/app.js"></script>
 </body>
 </html>
